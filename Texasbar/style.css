@@ -1,0 +1,116 @@
+/* Schriftart im Western-Style */
+body {
+  font-family: 'Stardos Stencil', cursive;
+  margin: 0;
+  background: url('img/steincayote.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #3e1e00;
+}
+
+/* Semi-transparenter Layer über dem Hintergrund */
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(244, 210, 166, 0.85); /* warmer, leicht milchiger Braunton */
+  z-index: -1;
+}
+
+/* Logo */
+.logo {
+  width: 140px;
+}
+
+/* Navigation */
+.navbar .nav-link {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #3e1e00 !important;
+  padding: 0 20px;
+  text-transform: uppercase;
+}
+
+/* Willkommens-Text */
+.welcome-heading {
+  margin-top: 20px;
+  font-size: 2.4rem;
+  color: #2e1500;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+/* Karten-Design */
+.card-option {
+  background-color: rgba(255, 255, 255, 0.92);
+  border: 3px solid #f1f0ef;
+  border-radius: 20px;
+  padding: 15px;
+  width: 240px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card-option:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+.card-option h4 {
+  color: #3e1e00;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #3e1e00;
+  font-size: 0.9rem;
+}
+/* Transparente Eingabefelder */
+.ff-input {
+  background-color: transparent !important; /* Hintergrund weg */
+  border: 1px solid #fff;                  /* Weißer Rahmen */
+  color: #fff;                             /* Textfarbe weiß (falls dunkler BG) */
+  border-radius: 6px;                      /* Runde Ecken */
+  padding: 10px;
+}
+
+/* Placeholder-Text anpassen */
+.ff-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);         /* halbtransparent */
+}
+
+/* Bei Fokus etwas Glow */
+.ff-input:focus {
+  outline: none;
+  border-color: #fafafa;                   /* goldener Rahmen bei Fokus */
+  box-shadow: 0 0 8px rgb(255, 255, 255);
+}
+/*  Abgerundete & transparente Eingabefelder */
+.ff-input {
+  background-color: rgba(255, 255, 255, 0.05); /* leichter Glaslook */
+  border: 1px solid rgba(255, 255, 255, 0.3);  /* dezenter Rahmen */
+  border-radius: 20px;                         /* schön rund */
+  padding: 12px 16px;
+  color: #fff;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);                  /* Glassmorphism Effekt */
+}
+
+/* Placeholder */
+.ff-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Hover + Fokus Glow */
+.ff-input:hover,
+.ff-input:focus {
+  border-color: #f5c542;                       /* goldener Rahmen */
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+  outline: none;
+}
+
+
+
+
