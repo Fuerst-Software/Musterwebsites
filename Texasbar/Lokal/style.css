@@ -1,0 +1,96 @@
+/* Schriftart im Western-Style */
+body {
+  font-family: 'Stardos Stencil', cursive;
+  margin: 0;
+  background: url('img/steincayote.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #3e1e00;
+}
+
+/* Semi-transparenter Layer über dem Hintergrund */
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(244, 210, 166, 0.85); /* warmer, leicht milchiger Braunton */
+  z-index: -1;
+}
+
+/* Logo */
+.logo {
+  width: 140px;
+}
+
+/* Navigation */
+.navbar .nav-link {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #3e1e00 !important;
+  padding: 0 20px;
+  text-transform: uppercase;
+}
+
+/* Willkommens-Text */
+.welcome-heading {
+  margin-top: 20px;
+  font-size: 2.4rem;
+  color: #2e1500;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+/* Karten-Design */
+.card-option {
+  background-color: rgba(255, 236, 200, 0.92);
+  border: 3px solid #3e1e00;
+  border-radius: 20px;
+  padding: 15px;
+  width: 240px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card-option:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; /* Abstand zwischen den Bildern */
+  margin: 30px auto;
+  max-width: 1200px;
+}
+
+.gallery img {
+  width: 150px;                /* feste kleine Thumbnails */
+  height: 100px;               /* alle gleich hoch = ordentliche Reihe */
+  object-fit: cover;           /* Bild wird zugeschnitten, bleibt aber sauber */
+  border: 3px solid #fff;
+  outline: 2px solid #d4af37;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 18px rgba(0,0,0,0.6);
+}
+
+
+
+.card-option h4 {
+  color: #3e1e00;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #3e1e00;
+  font-size: 0.9rem;
+}
