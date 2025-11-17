@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zahnarzt — Praxis Muster</title>
+  <meta name="description" content="Moderne Zahnmedizin — freundliche Praxis. Beispiel-Template." />
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2C8 2 4 4 4 8c0 5 8 12 8 12s8-7 8-12c0-4-4-6-8-6z" fill="currentColor"/>
+        </svg>
+        <span class="brand-text">Dr. Muster</span>
+      </a>
+
+      <nav class="nav" aria-label="Hauptnavigation">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav-list">☰</button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Hero-Bereich">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <h1>Dr. Muster<br>Moderne Zahnmedizin in Ihrer Nähe</h1>
+        <p>Freundlich, kompetent und individuell – für Ihr schönstes Lächeln.</p>
+        <a class="btn primary" href="#kontakt">Termin vereinbaren</a>
+      </div>
+      <svg class="hero-wave" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,40 C300,120 900,-40 1200,40 L1200,100 L0,100 Z"></path>
+      </svg>
+    </section>
+
+    <section id="leistungen" class="container cards">
+      <article class="card">
+        <h3>Allgemeine Zahnmedizin</h3>
+        <p>Regelmäßige Kontrollen, Prophylaxe und Füllungen.</p>
+      </article>
+      <article class="card">
+        <h3>Ästhetik & Implantate</h3>
+        <p>Moderne Versorgung mit ästhetischem Anspruch.</p>
+      </article>
+      <article class="card">
+        <h3>Digitale Diagnostik</h3>
+        <p>Röntgen & 3D-Aufnahmen für präzise Planungen.</p>
+      </article>
+    </section>
+
+    <section id="team" class="container about">
+      <h2>Unser Team</h2>
+      <p>Erfahrene Zahnärztinnen und Zahnärzte — freundlich und einfühlsam.</p>
+    </section>
+
+    <section id="kontakt" class="container contact">
+      <h2>Kontakt</h2>
+      <p><strong>Adresse:</strong> Musterstraße 1, 5020 Salzburg</p>
+      <p><strong>Telefon:</strong> 0123 456 789</p>
+
+      <h3>Öffnungszeiten</h3>
+      <ul class="opening-hours">
+        <li><strong>Montag:</strong> 08:00 – 12:00, 13:00 – 17:00</li>
+        <li><strong>Dienstag:</strong> 08:00 – 12:00, 13:00 – 17:00</li>
+        <li><strong>Mittwoch:</strong> 08:00 – 12:00</li>
+        <li><strong>Donnerstag:</strong> 08:00 – 12:00, 13:00 – 18:00</li>
+        <li><strong>Freitag:</strong> 08:00 – 13:00</li>
+      </ul>
+
+      <a class="btn call" href="tel:+43123456789">📞 Jetzt anrufen</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Musterzahnarztpraxis</p>
+      <ul class="footer-links">
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

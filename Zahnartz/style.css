@@ -1,0 +1,254 @@
+:root {
+  --brand: #0b6b5f;
+  --accent: #f2b33d;
+  --bg-overlay: rgba(0, 0, 0, 0.35);
+  --text: #222;
+  --muted: #666;
+  --radius: 12px;
+  --container: 1100px;
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  color: var(--text);
+  background: #fff;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+/* ---------------- Container ---------------- */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------------- Header (transparent!) ---------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  max-width: var(--container);
+  margin: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-list a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ---------------- Hero ---------------- */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url("Zahnarzt_Musterbild_3.png") center 25% / cover no-repeat;
+  color: #fff;
+  padding-top: 100px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-overlay);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  padding: 100px 20px 60px;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 24px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.9);
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: var(--brand);
+  border-color: var(--brand);
+}
+
+.btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.btn.call {
+  margin-top: 20px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+/* Hero Wave */
+.hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  fill: #fff;
+  z-index: 2;
+}
+
+/* ---------------- Cards ---------------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin: 80px auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 6px 18px rgba(15, 15, 15, 0.06);
+  text-align: center;
+  transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-4px); }
+.card h3 { color: var(--brand); margin-bottom: 10px; }
+
+/* ---------------- About + Kontakt ---------------- */
+.about, .contact {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.opening-hours {
+  list-style: none;
+  margin: 20px auto;
+  padding: 0;
+  max-width: 400px;
+  text-align: left;
+}
+
+.opening-hours li { margin: 6px 0; }
+.opening-hours strong {
+  color: var(--brand);
+  display: inline-block;
+  width: 120px;
+}
+
+/* ---------------- Footer ---------------- */
+.site-footer {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  color: var(--muted);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.footer-links a:hover { color: var(--brand); }
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 900px) {
+  .hero-content { padding: 80px 16px 40px; }
+}
+
+@media (max-width: 640px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 12px 0;
+  }
+  .nav-list.show { display: flex; }
+
+  .nav-toggle { display: block; }
+  .brand-text { display: inline; }
+
+  .hero {
+    min-height: 75vh;
+    background-position: center 35%;
+    padding-top: 120px;
+  }
+}
+
+/* ---------------- Offset für Ankerziele (z. B. Leistungen) ---------------- */
+[id] {
+  scroll-margin-top: 120px; /* 👈 sorgt dafür, dass nichts vom Nav verdeckt wird */
+}
