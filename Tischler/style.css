@@ -1,0 +1,271 @@
+/* --- Grundlayout --- */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #333;
+  background: #f8f8f8 url("img/holz-textur.jpg") repeat center center;
+  background-size: contain;
+  cursor: none; /* wir nutzen eigenen Cursor */
+}
+
+/* --- Header (modern & heller Hover-Effekt) --- */
+header {
+  background: rgba(59, 59, 59, 0.95);
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+header:hover {
+  background: rgba(80, 80, 80, 0.97);
+  box-shadow: 0 4px 15px rgba(255, 200, 100, 0.15);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: transform 0.4s ease, text-shadow 0.4s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(255, 200, 100, 0.4);
+}
+
+nav ul {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* --- moderner Hover-Effekt --- */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(to right, #ffcc66, #cc6600);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffcc66;
+  transform: translateY(-2px);
+}
+
+nav a:hover::after {
+  width: 80%;
+}
+
+/* --- Hero --- */
+.hero {
+  background-image: url("img/Musterbild_Tischlerei.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+.hero-text h2 {
+  font-size: 2.5rem;
+}
+.hero-text p {
+  font-size: 1.2rem;
+  margin: 10px 0 20px;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  background: #444;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+  background: #222;
+  transform: translateY(-2px);
+}
+
+/* --- Container & Sektionen --- */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 50px auto;
+}
+.section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Projekte: Laufende Bilderreihe --- */
+.slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+}
+.slide-track {
+  display: flex;
+  gap: 30px;
+  animation: scroll 30s linear infinite;
+}
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.slide {
+  flex: 0 0 300px;
+  transition: transform 0.4s ease;
+}
+.slide img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease;
+}
+.slide:hover img {
+  transform: scale(1.07);
+}
+
+/* --- Responsivität --- */
+@media (max-width: 900px) {
+  .slide { flex: 0 0 250px; }
+  .slide img { height: 170px; }
+}
+@media (max-width: 600px) {
+  .slide { flex: 0 0 200px; }
+  .slide img { height: 140px; }
+}
+
+/* --- Glühender Mauszeiger mit Funken --- */
+.glow-cursor {
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffbb66 0%, #cc6600 70%);
+  box-shadow: 0 0 10px 4px rgba(255, 180, 80, 0.6);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  transition: transform 0.05s linear;
+}
+.spark-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 998;
+}
+.spark {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #ffd38a 0%, #cc6600 80%);
+  border-radius: 50%;
+  opacity: 0.9;
+  pointer-events: none;
+  animation: spark-fly 0.6s ease-out forwards;
+}
+@keyframes spark-fly {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.9; }
+  100% { transform: translate(var(--x), var(--y)) scale(0); opacity: 0; }
+}
+
+/* --- Kontakt --- */
+.contact { text-align: center; }
+
+/* --- Footer --- */
+footer {
+  background: #3b3b3b;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+/* --- Animationen --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in-top {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeSlideDown 1s ease forwards;
+}
+@keyframes fadeSlideDown {
+  to { opacity: 1; transform: translateY(0); }
+}
